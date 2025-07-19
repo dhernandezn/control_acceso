@@ -15,6 +15,7 @@ class ValidarRutView(APIView):
             "valido": valido,
             "mensaje": mensaje
         }, status=status.HTTP_200_OK)
+    
     def validar_rut(self,rut):
         rut = rut.replace(".", "").replace("-", "")
         if len(rut) < 2:
@@ -25,7 +26,7 @@ class ValidarRutView(APIView):
             multiplo = 2
             for c in reversed(cuerpo):
                 suma += int(c) * multiplo
-                multiplo = 9 if multiplo == 7 else multiplo + 1
+                multiplo = 2 if multiplo == 7 else multiplo + 1
             dvr = 11 - (suma % 11)
             if dvr == 11:
                 dvr = '0'
