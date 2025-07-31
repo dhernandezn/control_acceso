@@ -17,7 +17,7 @@ class Prohibidos(models.Model):
         return self.fecha_inicio <= hoy <= self.fecha_termino
 
 class Autoexcluidos(models.Model):
-    rut = models.CharField(max_length=12, unique=True)
+    rut = models.CharField(max_length=13, unique=True)
     nombre = models.CharField(max_length=200, null=True)
     apellido_pat = models.CharField(max_length=100, null=True)
     apellido_mat = models.CharField(max_length=100, null=True)
