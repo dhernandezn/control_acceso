@@ -1,12 +1,13 @@
 import requests
 from datetime import datetime
 from .models import Autoexcluidos
+from config import API_KEY_SCJ
 
 API_URL = 'https://autoexclusion.scj.gob.cl/api/v1/exclusions'
-API_TOKEN = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBcHAgRW50cmFkYXMiLCJpYXQiOjE3NTA5NTMwMjF9.24Xy25wCN5uj8JRtBF5Gr1ieF0HeDzn6qLjKyLHbTHU4mIrYe-UtsBzeMwr7nU2443_2pPInd2_4ec7thi5yAw'
+API_TOKEN = API_KEY_SCJ
 
 def limpiar_rut(rut):
-    return rut.replace('.', '').replace('-', '').strip()
+    return rut.replace('.', '').strip()
 
 def actualizar_autoexcluidos():
     headers = {
